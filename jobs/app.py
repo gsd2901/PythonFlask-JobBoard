@@ -45,7 +45,6 @@ def job(job_id):
         [job_id], single=True)
     return render_template("job.html", job=job)
 
-"""
 @app.route('/employer/<employer_id>')
 def employer(employer_id):
     employer = execute_sql('SELECT * FROM employer WHERE id = ?', [employer_id], single=True)
@@ -71,4 +70,3 @@ def review(employer_id):
 
         return redirect(url_for('employer', employer_id=employer_id))
     return render_template('review.html', employer_id=employer_id)
-"""
