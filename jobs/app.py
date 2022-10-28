@@ -2,7 +2,7 @@ from flask import Flask, render_template, g, request, redirect, url_for
 import sqlite3
 import datetime
 
-PATH = "../db/jobs.sqlite"
+PATH = "db/jobs.sqlite"
 
 app = Flask(__name__)
 
@@ -30,7 +30,7 @@ def close_connection(exception):
     if connection is not None:
         connection.close()
 
-"""
+
 @app.route("/")
 @app.route("/jobs")
 def jobs():
@@ -38,7 +38,7 @@ def jobs():
     #    'SELECT job.id, job.title, job.description, job.salary, employer.id as employer_id, employer.name as employer_name FROM job JOIN employer ON employer.id = job.employer_id')
     return render_template('index.html', jobs=jobs)
 
-
+"""
 @app.route("/job/<job_id>")
 def job(job_id):
     job = execute_sql(
